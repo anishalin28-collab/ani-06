@@ -1,1 +1,14 @@
+name: Comment Workflow
 
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post a comment
+        env:
+          GH_TOKEN: ${{ secrets.MY_TOKEN }}
+        run: echo "This is a GitHub Actions comment workflow"
